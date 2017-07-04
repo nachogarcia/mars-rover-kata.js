@@ -1,0 +1,21 @@
+{
+  "name": "mars-rover-kata.js",
+  "version": "1.0.0",
+  "description": "Mars Rover Kata in Node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --require test/helper.js $(find test -name '*.js')"
+  },
+  "author": "Nacho García",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.1.0",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.6",
+    "sinon-chai": "^2.11.0"
+  }
+}
