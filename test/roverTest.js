@@ -1,4 +1,5 @@
 const Rover = require('../src/domain/Rover.js')
+const Coordinate = require('../src/domain/Coordinate.js')
 
 describe('the rover', () => {
   let coordinate
@@ -6,7 +7,7 @@ describe('the rover', () => {
   let rover
 
   beforeEach( () => {
-    coordinate = { x: 0, y: 0 }
+    coordinate = new Coordinate(0, 0)
     direction = 'N'
     rover = new Rover(coordinate, direction)
   })
@@ -37,5 +38,11 @@ describe('the rover', () => {
 
       expect(rover.coordinate.y).to.equal(-1)
     })
+  })
+
+  it('Stops if it finds an obstacle', () => {
+    rover = new Rover(coordinate, direction, [new Coordinate(0, 1)])
+
+    expect(rover.perform.bind(rover, ['f'])).to.throw(Error)
   })
 })
